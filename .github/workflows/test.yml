@@ -1,8 +1,8 @@
-name: Scheduled Curl Request
+name: Scheduled
 
 on:
   schedule:
-  - cron: "0 * * * *"
+  - cron: "* * * * *"
 
 jobs:
   send_request:
