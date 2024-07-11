@@ -1,4 +1,4 @@
-name: Scheduled
+name: Scheduled Message
 
 on:
   schedule:
