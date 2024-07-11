@@ -8,12 +8,13 @@ jobs:
   send_request:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Set token secret
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Send GET request
         env:
           ACCOUNT_TOKEN: ${{ secrets.ACCOUNT_TOKEN }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
           MESSAGE: ${{ secrets.MESSAGE }}
-      - name: Send GET request
         run: |
           curl -H "Authorization: ${ACCOUNT_TOKEN}" -H "Content-Type: application/json" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) discord/1.0.9153 Chrome/124.0.6367.243 Electron/30.1.0 Safari/537.36" -d '{"content": "${MESSAGE}"}' "https://discord.com/api/v9/channels/${CHANNEL_ID}/messages" > /dev/null 2>&1
