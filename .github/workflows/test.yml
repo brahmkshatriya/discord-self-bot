@@ -2,7 +2,7 @@ name: Scheduled
 
 on:
   schedule:
-  - cron: "* * * * *"
+  - cron: "15 * * * *"
 
 jobs:
   send_request:
