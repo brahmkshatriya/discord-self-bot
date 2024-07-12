@@ -17,4 +17,4 @@ jobs:
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
           MESSAGE: ${{ secrets.MESSAGE }}
         run: |
-          curl -H "Authorization: ${ACCOUNT_TOKEN}" -H "Content-Type: application/json" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) discord/1.0.9153 Chrome/124.0.6367.243 Electron/30.1.0 Safari/537.36" -d '{"content": "${{ MESSAGE }}"}' "https://discord.com/api/v9/channels/${CHANNEL_ID}/messages" > /dev/null 2>&1
+          curl -H "Authorization: ${ACCOUNT_TOKEN}" -H "Content-Type: application/json" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) discord/1.0.9153 Chrome/124.0.6367.243 Electron/30.1.0 Safari/537.36" -d '{"content": "${{ secrets.MESSAGE }}"}' "https://discord.com/api/v9/channels/${CHANNEL_ID}/messages" > /dev/null 2>&1
